@@ -1,0 +1,43 @@
+<div class="display">
+  <div class="slogan d-flex align-items-end">
+    <h1>
+      <sup>*</sup><%= @list.name %>
+    </h1>
+  </div>
+
+  <div>
+    <div class="grid pe-5 me-5">
+      <% @bookmarks.each do |bookmark| %>
+        <div class="g-col-lg-6 g-col-sm-12 movie-cards">
+          <div>
+            <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
+          </div>
+          <div class="d-flex align-items-center ps-4 pe-4">
+            <div class="mh-100">
+              <h5 class="movie-title">
+                <%= bookmark.movie.title %>．<%= bookmark.movie.rating %> 💙
+              </h5>
+              <p class="movie-overview">
+                <%= bookmark.movie.overview %>
+              </p>
+              <p class="movie-comment">
+                ❝ <%= bookmark.comment %> ❞
+              </p>
+              <%= link_to "Delete",
+              bookmark_path(bookmark),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+              class: "movie-delete"
+              %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="movie-new">
+      <%= link_to "Add a new movie", new_list_bookmark_path(@list), class: "button" %>
+    </div>
+  </div>
+
+  <%= link_to "<<", root_path, class: "return-button" %>
+</div>

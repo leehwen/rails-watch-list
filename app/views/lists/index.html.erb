@@ -1,0 +1,18 @@
+<div class="display">
+  <div class="slogan d-flex align-items-end">
+    <h1>
+      <sup>*</sup>fav_movies
+    </h1>
+  </div>
+
+  <div>
+    <div class="grid">
+      <% @lists.each do |list| %>
+        <div class="g-col-4">
+          <%= link_to list.name, list_path(list), class: "list-cards" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

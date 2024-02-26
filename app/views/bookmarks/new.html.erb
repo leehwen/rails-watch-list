@@ -1,0 +1,16 @@
+<div class="display">
+  <div class="slogan d-flex align-items-end">
+    <h1>
+      <sup>*</sup>bookmark a movie
+    </h1>
+  </div>
+
+  <div class="form">
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :movie %>
+      <%= f.input :comment %>
+      <%= f.submit "Let's do this!", class: "button" %>
+    <% end %>
+  </div>
+  <%= link_to "<<", root_path, class: "return-button" %>
+</div>

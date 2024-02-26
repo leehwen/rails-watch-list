@@ -1,0 +1,27 @@
+// Specific CSS for your home-page
+body {
+  background-image: asset-url("cloudss.jpg");
+  background-size: cover;
+}
+
+.slogan {
+  height: 30rem;
+}
+
+h1 {
+  color: white;
+  font-size: 6rem;
+  font-family: "Luckiest Guy", cursive;
+  margin-bottom: 3rem;
+}
+
+.list-cards {
+  text-decoration: none;
+  color: white;
+  font-family: "Satisfy", cursive;
+  font-size: 2rem;
+}
+
+.grid {
+  padding-left: 2.65rem;
+}
